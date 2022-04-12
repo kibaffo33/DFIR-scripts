@@ -21,3 +21,4 @@ egrep -rf keywords.txt . | sort > keywords-content.txt
 egrep -f keywords.txt index.txt | sort > keywords-filenames.txt
 egrep '[0-9]{13}' . | sort > keywords-timestamps-13.txt
 egrep '[0-9]{10}' . | sort > keywords-timestamps-10.txt
+wc -l keywords-*.txt | sort -rn > keywords-stats.txt
