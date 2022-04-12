@@ -17,5 +17,5 @@ cat index-filetypes.txt | awk -F ': ' '{ print $1 }' | sort | uniq -c | sort -rn
 #! Keyword grep search
 echo '==== Keyword search ===='
 touch keywords.txt
-egrep -rf keywords.txt . > keywords-content.txt
-egrep -f keywords.txt index.txt > keywords-filenames.txt
+egrep -rf keywords.txt . | sort > keywords-content.txt
+egrep -f keywords.txt index.txt | sort > keywords-filenames.txt
