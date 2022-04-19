@@ -12,7 +12,7 @@ cat index.txt | xargs stat -f "%z %N" | sort -rn > index-filesize.txt
 
 #! File type stats
 echo '==== File type stats ===='
-cat index-filetypes.txt | awk -F ': ' '{ print $1 }' | sort | uniq -c | sort -rn > index-filetype-stats.txt
+cat index-filetypes.txt | awk -F ': ' '{ print $1 }' | sort | uniq -c | sort -rn | egrep -v 'cannot open' > index-filetype-stats.txt
 
 #! Keyword grep search
 echo '==== Keyword search ===='
